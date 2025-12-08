@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+
+@font-face {
+    font-family: 'Cherolina';
+    src: url('https://fonts.cdnfonts.com/s/36001/Cherolina-K70JW.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+.head {
+    font-family: 'Cherolina', sans-serif;
+}
+
