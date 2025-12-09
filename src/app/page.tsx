@@ -4,9 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import LiquidEther from '@/components/LiquidEther';
 import { MdArrowOutward } from "react-icons/md";
-import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import BlurText from '@/components/BlurText';
+import useLenis from '@/lib/useLenis';
+import { FaGithub, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 export default function Home() {
+  useLenis({ lerp: 0.07 });
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -58,6 +61,68 @@ export default function Home() {
 
       <div className="relative z-10 min-h-screen">
         <h1 className="absolute top-14 left-6 sm:top-10 sm:left-8 text-5xl sm:text-5xl md:text-8xl text-white head">Sumanjeet P.</h1>
+        <div className="absolute inset-0 mt-20 flex flex-col items-center justify-center z-20 lg:mr-20 lg:inset-auto lg:top-1/2 lg:right-20 lg:transform lg:-translate-y-1/2 lg:flex-row lg:items-center lg:justify-end">
+          <div className="flex flex-col items-center">
+            <div className="relative mt-20 w-40 h-40 sm:w-88 sm:h-88 md:w-84 md:h-84 pointer-events-none">
+              <Image
+                src="/sumanjeet.webp"
+                alt="Sumanjeet Profile"
+                fill
+                className="rounded-full object-cover"
+                priority
+              />
+            </div>
+
+            <div className="mt-8 flex items-center gap-6 pointer-events-auto">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="text-white transition-transform duration-200 hover:-translate-y-1"
+              >
+                <FaInstagram className="text-2xl" />
+              </a>
+
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                className="text-white transition-transform duration-200 hover:-translate-y-1"
+              >
+                <FaTwitter className="text-2xl" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-white transition-transform duration-200 hover:-translate-y-1"
+              >
+                <FaLinkedin className="text-2xl" />
+              </a>
+            </div>
+          </div>
+
+          <BlurText
+            text="An evolved homosapien with a good taste in music with an ADHD brain of learning and creating something better everyday."
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="mt-14 px-6 text-center sm:text-base text-white lg:hidden text-3xl mb-8 body"
+          />
+        </div>
+
+        <BlurText
+          text="An evolved homosapien with a good taste in music with an ADHD brain of learning and creating something better everyday."
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="hidden lg:block absolute left-42 top-130 transform -translate-y-1/2 max-w-lg text-white text-4xl leading-relaxed body"
+        />
+
         <button
           aria-label="Open menu"
           aria-expanded={menuOpen}
@@ -127,8 +192,6 @@ export default function Home() {
                   />
                 </Link>
               ))}
-
-
               <div className="mt-auto mb-8 w-full pt-6 flex flex-col ">
                 <span className="mb-4 text-lg text-white/70">Socials</span>
                 <div className="flex w-full items-center justify-between">
@@ -163,7 +226,6 @@ export default function Home() {
                       <FaLinkedin className="text-2xl" />
                     </a>
                   </div>
-
                   <div className="text-sm text-white/60 italic hidden sm:block">
                     Press Esc
                   </div>
@@ -173,6 +235,20 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <section
+          className="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: "url('/profile2.webp')" }}
+        >
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="relative z-10 max-w-3xl p-8 sm:p-12 text-white">
+            <h2 className="text-3xl sm:text-4xl font-semibold mb-4">About</h2>
+            <p className="text-base sm:text-lg leading-relaxed">
+              An evolved homosapien with a good taste in music and an ADHD brain — constantly learning
+              and creating something better every day. I build things that feel purposeful and
+              experiment across design, motion and code.
+            </p>
+          </div>
+        </section>
     </div>
   );
 }

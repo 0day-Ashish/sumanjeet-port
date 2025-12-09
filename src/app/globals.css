@@ -12,3 +12,14 @@
     font-family: 'Cherolina', sans-serif;
 }
 
+@font-face {
+  font-family: "body";
+  src: url("/fonts/Caveat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.body {
+  font-family: "body";
+}
+
