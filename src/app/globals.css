@@ -13,13 +13,24 @@
 }
 
 @font-face {
-  font-family: "body";
+  font-family: "body1";
   src: url("/fonts/Caveat-VariableFont_wght.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-.body {
-  font-family: "body";
+.body1 {
+  font-family: "body1";
+}
+
+@font-face {
+  font-family: "body2";
+  src: url("/fonts/Sergio-Trendy.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.body2 {
+  font-family: "body2";
 }
 
